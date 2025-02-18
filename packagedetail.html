@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pacakge Detail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .pacakge-detail {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .pacakge-detail img {
+            max-width: 300px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .pacakge-info {
+            width: 100%;
+            text-align: center;
+        }
+        .pacakge-info h2 {
+            color: #007bff;
+        }
+        .pacakge-info p {
+            color: #555;
+            margin: 10px 0;
+        }
+        .pacakge-info .price {
+            color: #28a745;
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        .pacakge-details {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #ddd;
+            width: 100%;
+        }
+        .pacakge-details h3 {
+            margin: 0;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .pacakge-details p {
+            color: #555;
+        }
+        .pacakge-video {
+            margin: 20px 0;
+            width: 100%;
+            max-width: 600px;
+        }
+        .pacakge-description {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>pacakge Detail</h1>
+        <div class="pacakge-detail">
+            <img src="{{ d.image.url }}" alt="Pacakge Image">
+            <div class="pacakge-info">
+                <h2>Pacakge Name: {{ d.package_name }}</h2>
+               
+
+            </div>
+
+            </div>
+            <div class="pacakge-details">
+                <h3>pacakge Details</h3>
+                <p><strong>Duration:</strong> 10 weeks</p>
+                <p><strong>Instructor:</strong> {{ d.travel_agencyid.name }}</p>
+                <p><strong>Description:</strong> {{ d.package_description }}</p>
+                <p><strong>Language:</strong> English</p>
+                <p><strong>Price:</strong>{{d.package_price}}</p>
+            </div>
+            <div class="pacakge-video">
+                <p>Demo video: </p>
+                <video controls width="100%">
+                    <source src="{{ d.video.url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="pacakge-description">
+        </div>
+    </div>
+</body>
+</html>
